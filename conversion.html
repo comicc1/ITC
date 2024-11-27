@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+     <header>
+        <div class="container">
+            <nav class="menu sticky-header" id="menunav">
+                <!-- Hamburger Menu -->
+                <div class="hamburger-menu" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- Navigation Links -->
+                <ul id="nav-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./projects.html">Assignments</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Simple Converter</h1>
+        <form>
+            <p>
+                <label for="choice" id="choiceLabel">Choose Conversion Type:</label>
+                <select name="choice" id="choice">
+                    <option value="1">Fahrenheit to Celsius</option>
+                    <option value="2">Celsius to Fahrenheit</option>
+                    <option value="3">Meter to Feet</option>
+                    <option value="4">Feet to Meters</option>
+                </select>
+            </p>
+            <p>
+                <label for="num" id="numLabel">Number to be converted:</label>
+                <input type="number" id="num" name="num">
+            </p>
+            <p>
+                <button type="button" id="converbtn">Convert</button>
+            </p>
+            <p>
+                <label for="convertedVal" id="convertLabel">The Converted Value is:</label>
+                <input id="convertedVal" name="convertedVal" type="number" readonly>
+            </p>
+        </form>
+    </main>
+
+
+
+    <script>
+        function compute()
+{
+    let userChoice;
+            let number, converter;
+
+
+            userChoice = document.getElementById("choice").value * 1;
+            number = document.getElementById("num").value * 1;
+
+
+            console.log(userChoice);
+            console.log(number);
+
+
+            if (userChoice == 1)
+            {
+                converter = (number - 32) * (5 / 9); // Fahrenheit to Celsius
+            }
+            else if (userChoice == 2)
+            {
+                converter = (number * 9 / 5) + 32; // Celsius to Fahrenheit
+            }
+            else if (userChoice == 3)
+            {
+                converter = number * 3.281; // Meter to Feet
+            }
+            else
+            {
+                converter = number * 0.3048; // Feet to Meters
+            }
+
+
+            document.getElementById("convertLabel").innerHTML = 'The converted value of ' + number + ' is:';
+            document.getElementById("convertedVal").value = converter.toFixed(3);
+}
+
+
+function convert() 
+    {
+
+        //button click
+        document.getElementById("converbtn").addEventListener("click",()=>{
+
+            compute();
+
+            });
+    }
+
+        //Main
+
+        (() => {
+            convert();
+        })();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    // Toggle the active class on the menu
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+});
+    </script>
+</body>
+</html>
+
+
+
+css
+/* General Styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #1f1f1f; /* Darker header */
+    padding: 10px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+#nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#nav-links a {
+    color: #e0e0e0; /* Light link color */
+    text-decoration: none;
+}
+
+#nav-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff; /* White color for the heading */
+}
+
+/* Form Styles */
+form {
+    background-color: #2a2a2a; /* Darker form background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444; /* Dark border */
+    border-radius: 4px;
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0; /* Light input text */
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #555; /* Focused border color */
+    outline: none; /* Remove outline */
+}
+
+button {
+    background-color: #007bff; /* Button background */
+    color: #ffffff; /* Button text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button on hover */
+}
+
+/* Readonly Input */
+input[readonly] {
+    background-color: #444; /* Dark background for readonly input */
+    color: #e0e0e0; /* Light text color */
+}
