@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial, Sum, and Average Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div id="hamburger" class="hamburger">☰</div>
+            <nav id="nav-links" class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Factorial, Sum, and Average Calculator</h1>
+        <div class="converter">
+            <label for="nnumber">Enter a number:</label>
+            <input type="number" id="nnumber" placeholder="Enter a number">
+
+            <button onclick="factSumAvg()" id="fsaBtn">Calculate</button>
+            
+            <label for="factorResult">Factorial Result:</label>
+            <input type="text" id="factorResult" readonly>
+
+            <label for="summationResult">Summation Result:</label>
+            <input type="text" id="summationResult" readonly>
+
+            <label for="avgResult">Average Result:</label>
+            <input type="text" id="avgResult" readonly>
+        </div>
+    </main>
+
+    <script>
+function factSumAvg() {
+    // Get the value from the input field
+    const number = parseInt(document.getElementById('nnumber').value);
+    
+    // Check if the input is valid
+    if (isNaN(number) || number < 0) {
+        alert("Please enter a valid positive number.");
+        return;
+    }
+
+    // Calculate Factorial
+    let factorial = 1;
+    for (let i = 1; i <= number; i++) {
+        factorial *= i;
+    }
+
+    // Calculate Summation (Sum of numbers from 1 to the input number)
+    let sum = 0;
+    for (let i = 1; i <= number; i++) {
+        sum += i;
+    }
+
+    // Calculate Average (Sum divided by the number)
+    let average = sum / number;
+
+    // Display the results in the respective input fields
+    document.getElementById('factorResult').value = factorial;
+    document.getElementById('summationResult').value = sum;
+    document.getElementById('avgResult').value = average.toFixed(2);  // Rounded to 2 decimal places
+}
+
+
+    </script>
+
+</body>
+</html>
