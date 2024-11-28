@@ -40,39 +40,149 @@
     </main>
 
     <script>
-function factSumAvg() {
-    // Get the value from the input field
-    const number = parseInt(document.getElementById('nnumber').value);
-    
-    // Check if the input is valid
-    if (isNaN(number) || number < 0) {
-        alert("Please enter a valid positive number.");
-        return;
-    }
+        function factSumAvg() {
+            // Get the value from the input field
+            const number = parseInt(document.getElementById('nnumber').value);
+            
+            // Check if the input is valid
+            if (isNaN(number) || number < 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
 
-    // Calculate Factorial
-    let factorial = 1;
-    for (let i = 1; i <= number; i++) {
-        factorial *= i;
-    }
+            // Calculate Factorial
+            let factorial = 1;
+            for (let i = 1; i <= number; i++) {
+                factorial *= i;
+            }
 
-    // Calculate Summation (Sum of numbers from 1 to the input number)
-    let sum = 0;
-    for (let i = 1; i <= number; i++) {
-        sum += i;
-    }
+            // Calculate Summation (Sum of numbers from 1 to the input number)
+            let sum = 0;
+            for (let i = 1; i <= number; i++) {
+                sum += i;
+            }
 
-    // Calculate Average (Sum divided by the number)
-    let average = sum / number;
+            // Calculate Average (Sum divided by the number)
+            let average = sum / number;
 
-    // Display the results in the respective input fields
-    document.getElementById('factorResult').value = factorial;
-    document.getElementById('summationResult').value = sum;
-    document.getElementById('avgResult').value = average.toFixed(2);  // Rounded to 2 decimal places
-}
-
-
+            // Display the results in the respective input fields
+            document.getElementById('factorResult').value = factorial;
+            document.getElementById('summationResult').value = sum;
+            document.getElementById('avgResult').value = average.toFixed(2);  // Rounded to 2 decimal places
+        }
     </script>
-
 </body>
 </html>
+
+css
+/* General Styling for the Dark Theme */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Header and Navigation Bar Styling */
+header {
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #c4a5f1;
+}
+
+.hamburger {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Centered and Styled Main Content */
+main {
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Headline Styling */
+main h1 {
+    margin-bottom: 20px;
+    color: #bb86fc;
+}
+
+/* Form and Input Styling */
+.converter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 18px;
+    text-align: left;
+}
+
+input[type="number"],
+input[type="text"] {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[readonly] {
+    background-color: #333;
+    cursor: not-allowed;
+}
+
+/* Button Styling */
+button {
+    background-color: #6200ea;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
