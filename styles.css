@@ -1,0 +1,91 @@
+body {
+    background-color: #121212; /* Fallback color */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/34/608/886/yone-league-of-legends-league-of-legends-riot-games-spirit-blossom-hd-wallpaper-preview.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the whole screen */
+    background-position: center center; /* Centers the background image */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
+/* Header Styling (Fixed at the top) */
+header {
+    background-color: #333;
+    color: #f1f1f1;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    position: fixed; /* Keeps the header at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Makes sure the header is above other content */
+    text-align: center;
+}
+
+/* Button Container (Centered below the header) */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px; /* Creates space below the fixed header */
+}
+
+/* Link Group Styling */
+.link-group {
+    margin-bottom: 20px;
+}
+
+/* Link Styling */
+.link {
+    color: #f1f1f1; /* Light text color for links */
+    font-size: 18px;
+    margin: 10px 0;
+    text-decoration: none; 
+    padding: 10px 20px;
+    border: 1px solid #444;
+    border-radius: 5px; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover Effect for Links */
+.link:hover {
+    background-color: #555; 
+    transform: scale(1.05); 
+}
+
+/* Optional: Active State */
+.link:active {
+    background-color: #777; /* Even lighter color on click */
+}
+
+/* Button Styling */
+button {
+    background-color: #333; /* Dark button background */
+    color: #f1f1f1; /* Light text for buttons */
+    border: 1px solid #444; /* Slightly lighter border */
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    /* Move the buttons slightly down */
+    transform: translateY(10px); /* Move the buttons 10px down */
+}
+
+/* Hover and Focus Effects for Buttons */
+button:hover, button:focus {
+    background-color: #555; /* Lighter button color on hover */
+    transform: scale(1.05) translateY(10px); /* Slight scale-up and keep downward movement */
+}
+
+/* Optional: Button Active State */
+button:active {
+    background-color: #777; /* Even lighter color on click */
+}
