@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Converter</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="conversion.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -20,7 +20,6 @@
                 <!-- Navigation Links -->
                 <ul id="nav-links">
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="./projects.html">Assignments</a></li>
                 </ul>
             </nav>
         </div>
@@ -121,103 +120,3 @@ document.addEventListener("DOMContentLoaded", () => {
     </script>
 </body>
 </html>
-
-
-
-css
-/* General Styles */
-body {
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Header Styles */
-header {
-    background-color: #1f1f1f; /* Darker header */
-    padding: 10px 0;
-}
-
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#nav-links {
-    list-style: none;
-    padding: 0;
-}
-
-#nav-links li {
-    display: inline;
-    margin: 0 15px;
-}
-
-#nav-links a {
-    color: #e0e0e0; /* Light link color */
-    text-decoration: none;
-}
-
-#nav-links a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Main Content Styles */
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    color: #ffffff; /* White color for the heading */
-}
-
-/* Form Styles */
-form {
-    background-color: #2a2a2a; /* Darker form background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="number"], select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #444; /* Dark border */
-    border-radius: 4px;
-    background-color: #333; /* Dark input background */
-    color: #e0e0e0; /* Light input text */
-}
-
-input[type="number"]:focus, select:focus {
-    border-color: #555; /* Focused border color */
-    outline: none; /* Remove outline */
-}
-
-button {
-    background-color: #007bff; /* Button background */
-    color: #ffffff; /* Button text color */
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker button on hover */
-}
-
-/* Readonly Input */
-input[readonly] {
-    background-color: #444; /* Dark background for readonly input */
-    color: #e0e0e0; /* Light text color */
-}
